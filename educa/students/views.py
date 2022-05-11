@@ -43,7 +43,7 @@ class StudentCourseListView(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         qs = super().get_queryset()
-        return qs.filter(stidents__in=[self.request.user])
+        return qs.filter(students__in=[self.request.user])
 
 
 class StudentCourseDetailView(DetailView):
